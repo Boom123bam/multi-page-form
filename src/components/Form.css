@@ -1,3 +1,15 @@
+:root {
+  --p-marine-blue: hsl(213, 96%, 18%);
+  --p-purplish-blue: hsl(243, 100%, 62%);
+  --p-pastel-blue: hsl(228, 100%, 84%);
+  --p-light-blue: hsl(206, 94%, 87%);
+  --p-strawberry-red: hsl(354, 84%, 57%);
+  --n-cool-gray: hsl(231, 11%, 63%);
+  --n-light-gray: hsl(229, 24%, 87%);
+  --n-magnolia: hsl(217, 100%, 97%);
+  --n-alabaster: hsl(231, 100%, 99%);
+}
+
 @font-face {
   font-family: "Regular";
   src: url("assets/fonts/Ubuntu-Regular.ttf") format("truetype");
@@ -13,11 +25,18 @@
 
 body {
   background-color: var(--n-magnolia);
+  color: var(--p-marine-blue);
 }
 
 #root {
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   font-family: "Regular", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--n-magnolia);
 }
 
 .medium {
@@ -29,10 +48,10 @@ body {
 }
 
 .form-wrapper {
-  width: 50rem;
+  width: min(60rem, 100% - 3rem);
   height: 38rem;
   border-radius: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 1rem;
   box-shadow: 0 0 5px var(--n-light-gray);
   background-color: white;
@@ -58,37 +77,35 @@ body {
 .step {
   display: flex;
   gap: 1rem;
-}
 
-.step h2,
-h4 {
-  line-height: 1;
-  text-transform: uppercase;
-}
+  & h2,
+  h4 {
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  & h2 {
+    font-size: 1rem;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-.step h2 {
-  font-size: 1rem;
-}
+  .step-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.step-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.step-circle {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-circle.fill {
-  background-color: var(--p-light-blue);
-  color: black;
+  .step-circle.fill {
+    background-color: var(--p-light-blue);
+    color: var(--p-marine-blue);
+  }
 }
 
 .right-section {
@@ -96,27 +113,77 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  /* border: 1px solid black; */
+  max-width: 27.5rem;
+  margin-inline: auto;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
-  padding: 1rem;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+
+  & button {
+    border-radius: 0.5rem;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  & button.back {
+    padding: 0.8em 0;
+    color: var(--n-cool-gray);
+  }
+
+  & button.next {
+    background-color: var(--p-marine-blue);
+    color: var(--n-magnolia);
+  }
 }
 
-button {
-  border-radius: 0.5rem;
-  padding: 0.8em 1.5em;
-  font-size: 1em;
-  border: none;
-  font-family: inherit;
-  cursor: pointer;
-  background-color: transparent;
+.input-field {
+  & label {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  & input {
+    width: 100%;
+    border: 1px solid var(--n-light-gray);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1em;
+    margin-bottom: 1rem;
+    font-family: "Regular", sans-serif;
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--p-marine-blue);
+    }
+
+    &:invalid {
+      border-color: var(--p-strawberry-red);
+    }
+  }
+
+  .required-message {
+    color: var(--p-strawberry-red);
+    float: right;
+  }
 }
 
-button.next {
-  background-color: var(--p-marine-blue);
-  color: var(--n-magnolia);
+.form-title {
+  & h1 {
+    margin: 3rem 0 0.5rem;
+  }
+  & h3 {
+    color: var(--n-cool-gray);
+    font-size: 1em;
+  }
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 767px) {
