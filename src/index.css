@@ -1,0 +1,20 @@
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
