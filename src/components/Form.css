@@ -188,7 +188,7 @@ body {
 
 @media (max-width: 767px) {
   /* Add your mobile-specific styles here */
-  .desktop {
+  .step .desktop {
     display: none;
   }
 }

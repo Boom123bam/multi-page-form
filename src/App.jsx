@@ -1,9 +1,9 @@
 import "./App.css";
-import Form from "./components/Form";
+import FormCard from "./components/FormCard";
 function App() {
   return (
     <>
-      <Form />
+      <FormCard />
     </>
   );
 }
