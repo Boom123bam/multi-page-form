@@ -1,63 +1,97 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import TextInput from "./TextInput";
+import { useDispatch } from "react-redux";
+import { editData, nextStep } from "../../redux/formSlice";
+import Buttons from "../Buttons";
 
-export default function Page1({ params }) {
-  const [formPageData, setFormPageData] = useState({});
+export default function Page1() {
+  const dispatch = useDispatch();
 
-  const handleInputData = (data) => {
-    setFormPageData({
-      ...formPageData,
+  const formPageData = useRef({
+    name: "",
+    email: "",
+    phone: "",
+  });
+  const [requiredMessages, setRequiredMessages] = useState({
+    name: false,
+    email: false,
+    phone: false,
+  });
+
+  function handleInputDataChange(data) {
+    formPageData.current = {
+      ...formPageData.current,
       ...data,
+    };
+  }
+
+  function validate() {
+    setRequiredMessages({
+      name: formPageData.current.name === "",
+      email: formPageData.current.email === "",
+      phone: formPageData.current.phone === "",
     });
-    console.log(formPageData);
-  };
+    return (
+      formPageData.current.name != "" &&
+      formPageData.current.email != "" &&
+      formPageData.current.phone != ""
+    );
+  }
+
+  function handleNext() {
+    if (validate()) {
+      dispatch(nextStep());
+      dispatch(editData(formPageData.current));
+    }
+  }
+
   return (
     <>
+      <div className="form-title">
+        <h1 className="bold">Personal Info</h1>
+        <h3>
+          Please provide your name, email address, and phone number.
+        </h3>
+      </div>
+
       <div className="form-content">
         <div className="inputs">
           <TextInput
             label="Name"
             varName="name"
             placeholder="e.g. Stephen King"
-            valid={true}
+            showMessage={requiredMessages.name}
             type="text"
-            sendToParent={handleInputData}
+            sendToParent={handleInputDataChange}
           />
           <TextInput
             label="Email Adress"
             varName="email"
             placeholder="e.g. stephenking@lorem.com"
-            valid={true}
-            type="email"
-            sendToParent={handleInputData}
+            showMessage={requiredMessages.email}
+            type="text"
+            sendToParent={handleInputDataChange}
           />
           <TextInput
             label="Phone Number"
             varName="phone"
             placeholder="e.g. +1 234 567 890"
-            valid={true}
+            showMessage={requiredMessages.phone}
             type="tel"
-            sendToParent={handleInputData}
+            sendToParent={handleInputDataChange}
           />
         </div>
       </div>
+
       <div className="buttons">
-        <button
-          className="back"
-          onClick={() => {
-            if (step > 1) setStep(step - 1);
-          }}
-        >
-          Go Back
-        </button>
-        <button
-          className="next"
-          onClick={() => {
+        <Buttons
+          // back={() => {
+          //   dispatch(prevStep());
+          // }}
+          next={() => {
             handleNext();
           }}
-        >
-          Next Step
-        </button>
+        />
       </div>
     </>
   );

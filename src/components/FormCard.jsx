@@ -1,18 +1,16 @@
-import { useState } from "react";
-import "./Form.css";
+import "./styles/Form.css";
 import Form from "./Form";
 import StepIndicator from "./StepIndicator";
 
 export default function FormCard() {
-  const [step, setStep] = useState(1);
   return (
     <div className="form-wrapper">
       <div className="left-section">
-        <StepIndicator step={step} />
+        <StepIndicator />
       </div>
 
       <div className="right-section">
-        <Form step={step} setStep={setStep} />
+        <Form />
       </div>
     </div>
   );

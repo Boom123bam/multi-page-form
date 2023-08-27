@@ -1,29 +1,26 @@
-import TextInput from "./step1/TextInput";
+import { useSelector } from "react-redux";
 import Page1 from "./step1/Page1";
+import Page2 from "./step2/Page2";
 
-export default function Form({ step, setStep }) {
+export default function Form() {
+  const step = useSelector((state) => state.form.step);
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
-  function handleNext() {
-    if (step < 4) setStep(step + 1);
-    if (formData.name) {
-      formData.nameValid = true;
-    } else formData.nameValid = false;
-  }
-
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className="form-title">
-          <h1 className="bold">Personal Info</h1>
-          <h3>
-            Please provide your name, email address, and phone number.
-          </h3>
-        </div>
-
-        <Page1 />
+      <form onSubmit={handleSubmit} className="form">
+        {step == 1 ? (
+          <Page1 />
+        ) : step == 2 ? (
+          <Page2 />
+        ) : step == 3 ? (
+          <Page3 />
+        ) : (
+          <Page4 />
+        )}
       </form>
     </>
   );

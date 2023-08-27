@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import StepNumber from "./StepNumber";
 
-export default function StepIndicator({ step }) {
+export default function StepIndicator() {
+  const step = useSelector((state) => state.form.step);
+
   return (
     <div className="left-section-content">
       <StepNumber num={1} name={"Your Info"} active={step == 1} />

@@ -1,23 +1,18 @@
-import { useRef, useState } from "react";
-
 export default function TextInput({
   label,
   varName,
   placeholder,
-  valid,
+  showMessage,
   type,
   sendToParent,
 }) {
-  // const value = useRef("");
   const handleInputChange = (event) => {
-    // value.current = event.target.value;
-    // console.log("change");
     sendToParent({ [varName]: event.target.value });
   };
   return (
     <div className="input-field">
       <label>{label}</label>
-      {!valid && (
+      {showMessage && (
         <span className="required-message">
           This field is required
         </span>
@@ -27,6 +22,7 @@ export default function TextInput({
         type={type}
         onChange={handleInputChange}
         placeholder={placeholder}
+        className={`${showMessage ? "invalid" : ""}`}
       />
     </div>
   );
