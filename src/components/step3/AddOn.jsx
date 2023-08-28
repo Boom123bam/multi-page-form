@@ -12,7 +12,7 @@ export default function AddOn({
 
   return (
     <div className="add-on">
-      <label className="checkbox">
+      <label className="checkbox" tabIndex="0">
         <div className="wrapper">
           <input
             type="checkbox"

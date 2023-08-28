@@ -71,7 +71,7 @@ export default function Page2() {
         </div>
         <div className="plan-toggle">
           <h2>Monthly</h2>
-          <label className="switch">
+          <label className="switch" tabIndex="0">
             <input
               type="checkbox"
               checked={!displayMonthly}

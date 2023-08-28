@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const formSlice = createSlice({
   name: "form",
   initialState: {
-    step: 3,
+    step: 1,
     data: {},
   },
   reducers: {
@@ -13,6 +13,9 @@ export const formSlice = createSlice({
     prevStep: (state) => {
       if (state.step > 1) state.step -= 1;
     },
+    setStep: (state, action) => {
+      state.step = action.payload;
+    },
     editData: (state, action) => {
       state.data = { ...state.data, ...action.payload };
       console.log(state.data);
@@ -21,6 +24,7 @@ export const formSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { nextStep, prevStep, editData } = formSlice.actions;
+export const { nextStep, prevStep, setStep, editData } =
+  formSlice.actions;
 
 export default formSlice.reducer;

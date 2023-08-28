@@ -11,6 +11,7 @@ export default function PlanItem({
     <div
       className={`plan-item${selected ? " selected" : ""}`}
       onClick={onClick}
+      tabIndex="0"
     >
       <img srcSet={img} className="icon" />
       <h2>{title}</h2>

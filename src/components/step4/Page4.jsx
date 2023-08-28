@@ -1,6 +1,6 @@
 import Buttons from "../Buttons";
 import { useDispatch } from "react-redux";
-import { prevStep } from "../../redux/formSlice";
+import { prevStep, nextStep } from "../../redux/formSlice";
 import Summary from "./Summary";
 
 export default function Page4() {
@@ -23,7 +23,7 @@ export default function Page4() {
             dispatch(prevStep());
           }}
           confirm={() => {
-            handleNext();
+            dispatch(nextStep());
           }}
         />
       </div>
