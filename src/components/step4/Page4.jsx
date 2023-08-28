@@ -1,25 +1,28 @@
 import Buttons from "../Buttons";
 import { useDispatch } from "react-redux";
 import { prevStep } from "../../redux/formSlice";
+import Summary from "./Summary";
 
-export default function Page2() {
+export default function Page4() {
   const dispatch = useDispatch();
 
   return (
     <>
       <div className="form-title">
-        <h1 className="bold">Select your plan</h1>
-        <h3>You have the option of monthly or yearly billing.</h3>
+        <h1 className="bold">Finishing up</h1>
+        <h3>Double-check everything looks OK before confirming.</h3>
       </div>
 
-      <div className="form-content"></div>
+      <div className="form-content">
+        <Summary />
+      </div>
 
       <div className="buttons">
         <Buttons
           back={() => {
             dispatch(prevStep());
           }}
-          next={() => {
+          confirm={() => {
             handleNext();
           }}
         />

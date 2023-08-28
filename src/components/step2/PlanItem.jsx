@@ -1,12 +1,18 @@
 export default function PlanItem({
   title,
+  img,
   monthlyPrice,
   yearlyPrice,
   displayMonthly = true,
   selected = false,
+  onClick,
 }) {
   return (
-    <div className={`plan-item${selected ? " selected" : ""}`}>
+    <div
+      className={`plan-item${selected ? " selected" : ""}`}
+      onClick={onClick}
+    >
+      <img srcSet={img} className="icon" />
       <h2>{title}</h2>
       <h3>
         {displayMonthly

@@ -1,16 +1,30 @@
 import Buttons from "../Buttons";
 import { useDispatch } from "react-redux";
-import { prevStep } from "../../redux/formSlice";
+import { prevStep, nextStep, editData } from "../../redux/formSlice";
 import PlanItem from "./PlanItem";
 import { useState } from "react";
 
 export default function Page2() {
   const dispatch = useDispatch();
   const [displayMonthly, setDisplayMonthly] = useState(true);
+  const [selectedPlan, setSelectedPlan] = useState(false);
 
   const handleCheckboxChange = () => {
     setDisplayMonthly(!displayMonthly);
   };
+
+  function validate() {
+    return selectedPlan;
+  }
+
+  function handleNext() {
+    if (validate()) {
+      dispatch(nextStep());
+      dispatch(
+        editData({ plan: selectedPlan, monthly: displayMonthly })
+      );
+    }
+  }
 
   return (
     <>
@@ -23,33 +37,47 @@ export default function Page2() {
         <div className="plans">
           <PlanItem
             title="Arcade"
+            img="assets/images/icon-arcade.svg"
             monthlyPrice={9}
             displayMonthly={displayMonthly}
             yearlyPrice={90}
+            selected={selectedPlan == "arcade"}
+            onClick={() => {
+              setSelectedPlan("arcade");
+            }}
           />
           <PlanItem
-            title="Arcade"
-            monthlyPrice={9}
+            title="Advanced"
+            img="assets/images/icon-advanced.svg"
+            monthlyPrice={12}
             displayMonthly={displayMonthly}
-            yearlyPrice={90}
+            yearlyPrice={120}
+            selected={selectedPlan == "advanced"}
+            onClick={() => {
+              setSelectedPlan("advanced");
+            }}
           />
           <PlanItem
-            title="Arcade"
-            monthlyPrice={9}
-            yearlyPrice={90}
+            title="Pro"
+            img="assets/images/icon-pro.svg"
+            monthlyPrice={15}
+            yearlyPrice={150}
             displayMonthly={displayMonthly}
-            selected={true}
+            selected={selectedPlan == "pro"}
+            onClick={() => {
+              setSelectedPlan("pro");
+            }}
           />
         </div>
         <div className="plan-toggle">
           <h2>Monthly</h2>
-          <label class="switch">
+          <label className="switch">
             <input
               type="checkbox"
-              checked={displayMonthly}
+              checked={!displayMonthly}
               onChange={handleCheckboxChange}
             />
-            <span class="slider round"></span>
+            <span className="slider"></span>
           </label>
           <h2>Yearly</h2>
         </div>
