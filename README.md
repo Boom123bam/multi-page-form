@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://your-solution-url.com)
-- Live Site URL: (jade-sfogliatella-a30bb0.netlify.app)
+- Live Site URL: (https://jade-sfogliatella-a30bb0.netlify.app)
 
 ## My process
 
