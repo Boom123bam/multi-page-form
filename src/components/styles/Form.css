@@ -12,15 +12,17 @@
 
 @font-face {
   font-family: "Regular";
-  src: url("assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+  src: url("/public/assets/fonts/Ubuntu-Regular.ttf")
+    format("truetype");
 }
 @font-face {
   font-family: "Medium";
-  src: url("assets/fonts/Ubuntu-Medium.ttf") format("truetype");
+  src: url("/public/assets/fonts/Ubuntu-Medium.ttf")
+    format("truetype");
 }
 @font-face {
   font-family: "Bold";
-  src: url("assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+  src: url("/public/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
 }
 
 body {
