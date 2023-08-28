@@ -47,39 +47,41 @@ export default function Page1() {
 
   return (
     <>
-      <div className="form-title">
-        <h1 className="bold">Personal Info</h1>
-        <h3>
-          Please provide your name, email address, and phone number.
-        </h3>
-      </div>
+      <div className="form-content-wrapper">
+        <div className="form-title">
+          <h1 className="bold">Personal Info</h1>
+          <h3>
+            Please provide your name, email address, and phone number.
+          </h3>
+        </div>
 
-      <div className="form-content">
-        <div className="inputs">
-          <TextInput
-            label="Name"
-            varName="name"
-            placeholder="e.g. Stephen King"
-            showMessage={requiredMessages.name}
-            type="text"
-            sendToParent={handleInputDataChange}
-          />
-          <TextInput
-            label="Email Adress"
-            varName="email"
-            placeholder="e.g. stephenking@lorem.com"
-            showMessage={requiredMessages.email}
-            type="text"
-            sendToParent={handleInputDataChange}
-          />
-          <TextInput
-            label="Phone Number"
-            varName="phone"
-            placeholder="e.g. +1 234 567 890"
-            showMessage={requiredMessages.phone}
-            type="tel"
-            sendToParent={handleInputDataChange}
-          />
+        <div className="form-content">
+          <div className="inputs">
+            <TextInput
+              label="Name"
+              varName="name"
+              placeholder="e.g. Stephen King"
+              showMessage={requiredMessages.name}
+              type="text"
+              sendToParent={handleInputDataChange}
+            />
+            <TextInput
+              label="Email Adress"
+              varName="email"
+              placeholder="e.g. stephenking@lorem.com"
+              showMessage={requiredMessages.email}
+              type="text"
+              sendToParent={handleInputDataChange}
+            />
+            <TextInput
+              label="Phone Number"
+              varName="phone"
+              placeholder="e.g. +1 234 567 890"
+              showMessage={requiredMessages.phone}
+              type="tel"
+              sendToParent={handleInputDataChange}
+            />
+          </div>
         </div>
       </div>
 
