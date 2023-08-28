@@ -232,6 +232,7 @@ body {
     }
 
     &:hover {
+      border-color: var(--p-marine-blue);
       cursor: pointer;
     }
   }
@@ -307,10 +308,13 @@ body {
     width: 100%;
     height: 100%;
 
-    :hover {
+    &:hover {
       cursor: pointer;
     }
 
+    &:hover .wrapper {
+      border-color: var(--p-marine-blue);
+    }
     .wrapper {
       border-radius: 0.5rem;
       border: 1px solid var(--n-light-gray);
@@ -376,6 +380,10 @@ body {
   .top h3 {
     text-decoration: underline;
     cursor: pointer;
+
+    &:hover {
+      color: var(--p-purplish-blue);
+    }
   }
   .total h1 {
     font-size: 1.5rem;
@@ -470,17 +478,26 @@ body {
   & button.back {
     width: auto;
     color: var(--n-cool-gray);
+    &:hover {
+      color: var(--p-marine-blue);
+    }
   }
 
   & button.next {
     background-color: var(--p-marine-blue);
     color: var(--n-magnolia);
     margin-left: auto;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   & button.confirm {
     background-color: var(--p-purplish-blue);
     color: white;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   @media (max-width: 850px) {
