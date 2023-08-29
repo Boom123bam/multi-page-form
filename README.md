@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
+- Solution URL: (https://www.frontendmentor.io/solutions/multi-page-form-using-reactredux-kyuLKQ1BQ7)
 - Live Site URL: (https://jade-sfogliatella-a30bb0.netlify.app)
 
 ## My process
