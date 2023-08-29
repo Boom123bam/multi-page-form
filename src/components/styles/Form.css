@@ -131,8 +131,6 @@ body {
 
 .right-section {
   position: relative;
-  /* flex-grow: 1; */
-  /* border: 1px solid black; */
   max-width: 30rem;
   margin-inline: auto;
 
@@ -324,7 +322,6 @@ body {
       display: flex;
       gap: 1rem;
       align-items: center;
-      /* background-color: var(--n-magnolia); */
     }
     .wrapper:has(input:checked) {
       background-color: var(--n-magnolia);
@@ -527,7 +524,6 @@ body {
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: -3px 10px 20px var(--n-light-gray);
-    /* transform: translateY(-8rem); */
     background-color: white;
     left: 0;
     right: 0;
