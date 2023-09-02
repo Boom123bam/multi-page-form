@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
+- Solution URL: (https://www.frontendmentor.io/solutions/multi-page-form-using-reactredux-kyuLKQ1BQ7)
 - Live Site URL: (https://jade-sfogliatella-a30bb0.netlify.app)
 
 ## My process
@@ -34,10 +34,25 @@ Users should be able to:
 ### Built with
 
 - Vite + React
-- Plain CSS
+- Plain CSS (To try out the new nesting feature)
 - pain
 
-### What I learned
+### Challenges
 
-Refs in react
-Basics of redux
+State Management with Redux:
+
+Sending and managing state between different form components posed a challenge. To overcome this, I decided to use Redux, a predictable state container. Allowing me to centralize and control the application's state effortlessly.
+
+Project Structure:
+It was challenging to figure out how I should structure the project so to make switching between pages easy. In the end I opted to use a component for each page, simplifying the development process.
+
+### Outcomes
+
+Understanding in Redux:
+By the end of this project, I had gained a basic understanding of Redux, enabling me to efficiently manage application state and facilitate data flow between components.
+
+Enhanced React Skills:
+My familiarity with React deepened as I integrated Redux and utilized React features like the useRef hook.
+
+Improved CSS Skills:
+This project strengthened my CSS skills, and was a great opportunity to try out the newly added CSS nesting, which was very fun to use!
