@@ -39,20 +39,40 @@ Users should be able to:
 
 ### Challenges
 
-State Management with Redux:
+#### State Management with Redux
 
 Sending and managing state between different form components posed a challenge. To overcome this, I decided to use Redux, a predictable state container. Allowing me to centralize and control the application's state effortlessly.
 
-Project Structure:
-It was challenging to figure out how I should structure the project so to make switching between pages easy. In the end I opted to use a component for each page, simplifying the development process.
+#### Project Structure
+
+It was challenging to figure out how I should structure the project so to make switching between pages easy. In the end I decided to use a component for each page, simplifying the development process.
+
+```js
+{
+  step == 1 ? (
+    <Page1 />
+  ) : step == 2 ? (
+    <Page2 />
+  ) : step == 3 ? (
+    <Page3 />
+  ) : step == 4 ? (
+    <Page4 />
+  ) : (
+    <ThankYou />
+  );
+}
+```
 
 ### Outcomes
 
-Understanding in Redux:
+#### Understanding in Redux
+
 By the end of this project, I had gained a basic understanding of Redux, enabling me to efficiently manage application state and facilitate data flow between components.
 
-Enhanced React Skills:
+#### Enhanced React Skills
+
 My familiarity with React deepened as I integrated Redux and utilized React features like the useRef hook.
 
-Improved CSS Skills:
+#### Improved CSS Skills
+
 This project strengthened my CSS skills, and was a great opportunity to try out the newly added CSS nesting, which was very fun to use!
